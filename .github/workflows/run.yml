@@ -1,0 +1,36 @@
+name: Run Scratch Task
+
+on:
+  workflow_dispatch: # 手動実行ボタンを表示
+  # schedule: # 必要であれば定期実行のコメントアウトを外す
+  #   - cron: '0 9 * * *' # 日本時間18時 (UTC 9:00) に毎日実行
+
+jobs:
+  scratch-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Script for Target S_jansl7129
+        env:
+          # ログイン情報
+          SCRATCH_USERNAME: "supp0n"
+          SCRATCH_PASSWORD: ${{ secrets.SCRATCH_PASSWORD }}
+          
+          # ターゲット指定 (デフォルトで S_jansl7129 になっていますが念のため記述)
+          TARGET_USER: "S_jansl7129"
+          
+          # ★注意★ コメントを送りたい場合のみ、下の行のコメントアウト(#)を外して内容を書く
+          # COMMENT_CONTENT: "Hello from GitHub Actions!" 
+          
+        run: node index.js
