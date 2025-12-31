@@ -28,7 +28,7 @@ jobs:
           SCRATCH_PASSWORD: ${{ secrets.SCRATCH_PASSWORD }}
           
           # ターゲット指定 (デフォルトで S_jansl7129 になっていますが念のため記述)
-          TARGET_USER: "S_jansl7129"
+          #TARGET_USER: "S_jansl7129"
           
           # ★注意★ コメントを送りたい場合のみ、下の行のコメントアウト(#)を外して内容を書く
           # COMMENT_CONTENT: "Hello from GitHub Actions!" 
