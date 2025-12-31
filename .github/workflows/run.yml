@@ -65,9 +65,8 @@
 name: Run Scratch Task (TEST)
 
 on:
-  workflow_dispatch: # 手動実行ボタンを表示
-    schedule: # 必要であれば定期実行のコメントアウトを外す
-      - cron: '40 9 31 12 *' # 日本時間 1月1日 00:00 (UTC 12月31日 15:00)
+  schedule: # 必要であれば定期実行のコメントアウトを外す
+    - cron: '51 9 31 12 *' # 日本時間 1月1日 00:00 (UTC 12月31日 15:00)
 jobs:
   scratch-job01:
     runs-on: ubuntu-latest
