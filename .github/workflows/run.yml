@@ -2,9 +2,8 @@ name: Run Scratch Task
 
 on:
   workflow_dispatch: # 手動実行ボタンを表示
-  # schedule: # 必要であれば定期実行のコメントアウトを外す
-  #   - cron: '0 9 * * *' # 日本時間18時 (UTC 9:00) に毎日実行
-
+    schedule: # 必要であれば定期実行のコメントアウトを外す
+      - cron: '0 15 31 12 *' # 日本時間 1月1日 00:00 (UTC 12月31日 15:00)
 jobs:
   scratch-job:
     runs-on: ubuntu-latest
@@ -21,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run Script for Target S_jansl7129
+      - name: Run Script for Target
         env:
           # ログイン情報
           SCRATCH_USERNAME: "supp0n"
