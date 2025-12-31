@@ -66,7 +66,7 @@ name: Run Scratch Task (TEST)
 
 on:
   schedule: # 必要であれば定期実行のコメントアウトを外す
-    - cron: '51 9 31 12 *' # 日本時間 1月1日 00:00 (UTC 12月31日 15:00)
+    - cron: '00 10 31 12 *' # 日本時間 1月1日 00:00 (UTC 12月31日 15:00)
 jobs:
   scratch-job01:
     runs-on: ubuntu-latest
